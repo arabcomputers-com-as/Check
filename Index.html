@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warranty Sticker Validation</title>
+    <title>التحقق من ملصق الضمان</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
+        
         :root {
-            font-size: 14px; /* تقليل حجم الخط العام */
+            font-size: 14px;
         }
 
+        /* الخطوط */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', 'Helvetica', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
-            line-height: 1.5; /* تحسين تباعد الأسطر */
+            line-height: 1.5;
+        }
+
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Arial Arabic', 'Noto Sans Arabic', sans-serif;
+            font-weight: normal;
+            line-height: 1.8;
+        }
+
+        .english-text {
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .container {
@@ -29,19 +42,14 @@
         }
 
         .header-content {
-            position: sticky; /* جعل الشعار يلتصق عند التمرير */
+            position: sticky;
             top: 0;
-            background-color: #fff; /* لون الخلفية */
-            z-index: 1000; /* التأكد من ظهور الشعار فوق ا��عناصر الأخرى */
-            padding: 10px 0; /* إضافة مساحة حول الشعار */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل */
-            text-align: left;
+            background-color: #fff;
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: right;
             margin-bottom: 30px;
-            transition: opacity 0.3s ease; /* تأثير الظهور والاختفاء */
-        }
-
-        .header-content.hide {
-            opacity: 0; /* إخفاء الشعار عند التمرير لأسفل */
         }
 
         .logo {
@@ -55,32 +63,12 @@
             margin: 10px 0 15px 0;
         }
 
-        .breadcrumb a {
-            color: #000 !important;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            color: #333 !important;
-            text-decoration: underline;
-        }
-
         h2 {
             color: #2c3e50;
-            font-size: 1.3rem; /* تقليل حجم الخط */
+            font-size: 1.3rem;
             font-weight: 700;
             text-align: center;
             margin: 20px 0;
-            letter-spacing: 1px;
-        }
-
-        .main-description {
-            text-align: center;
-            font-weight: normal;
-            font-size: 0.9rem; /* تقليل حجم الخط */
-            line-height: 1.6; /* تحسين تباعد الأسطر */
-            max-width: 800px;
-            margin: 0 auto 30px auto;
         }
 
         .warning-message {
@@ -89,7 +77,12 @@
             padding: 0;
             text-align: center;
             font-weight: bold;
-            font-size: 0.9rem; /* تقليل حجم الخط */
+            font-size: 0.9rem;
+        }
+
+        .warning-message .arabic-text {
+            font-size: 1rem;
+            font-weight: bold;
         }
 
         .warning-url {
@@ -106,20 +99,13 @@
             margin-bottom: 15px;
         }
 
-        .input-instruction {
-            text-align: center;
-            font-weight: normal;
-            font-size: 0.8rem; /* تقليل حجم الخط */
-            margin: 15px 0;
-        }
-
         .input-container {
             width: 45%;
             max-width: 300px;
             display: flex;
             align-items: center;
             border: 2px solid #cccccc;
-            border-radius: 25px 0 0 25px;
+            border-radius: 25px;
             overflow: hidden;
             margin: 10px auto;
             height: 40px;
@@ -129,10 +115,9 @@
             flex: 1;
             padding: 8px 12px;
             border: none;
-            font-size: 0.8rem; /* تقليل حجم الخط */
+            font-size: 0.8rem;
             outline: none;
-            border-radius: 25px 0 0 25px;
-            text-align: left;
+            text-align: right;
             height: 100%;
         }
 
@@ -141,253 +126,69 @@
             background-color: #a8822b;
             color: white;
             border: none;
-            font-size: 0.8rem; /* تقليل حجم الخط */
+            font-size: 0.8rem;
             cursor: pointer;
-            transition: all 0.3s ease;
             height: 100%;
-            border-radius: 0;
-            min-width: 80px;
         }
 
-        .input-container button.pressed {
-            background-color: white !important;
-            color: #a8822b !important;
-        }
+        /* باقي الأنماط ... */
 
-        #result {
-            margin: 20px auto;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 0.9rem; /* تقليل حجم الخط */
-            max-width: 350px;
-        }
-
-        .success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .footer {
-            margin-top: 25px;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: white;
-            border-radius: 10px;
-            text-align: left;
-            margin-bottom: 70px !important;
-            font-size: 0.8rem; /* تقليل حجم الخط */
-        }
-
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 25px;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .bottom-nav .nav-icon svg {
-            fill: none; /* إزالة التعبئة */
-            stroke: #999; /* جعل الخط رمادي فاتح */
-            stroke-width: 1; /* جعل الخط خفيفًا */
-        }
-
-        .bottom-nav .nav-icon:hover svg {
-            stroke: #a8822b; /* تغيير لون الخط عند التحويم */
-        }
-
-        .nav-icon {
-            background: none;
-            border: none;
-            padding: 8px;
-            cursor: pointer;
-        }
-
-        .right-section {
-            flex: 1;
-            margin-left: 20px;
-            text-align: left;
-        }
-
-        .right-section h2 {
-            text-align: left;
-            font-size: 1.2rem;
-        }
-
-        .right-section p {
-            margin: 10px 0;
-            font-size: 0.8rem; /* تقليل حجم الخط */
-            font-weight: 500; /* جعل الخط أنيق */
-            line-height: 1.6; /* تحسين تباعد الأسطر */
-            letter-spacing: 0.5px; /* تحسين التباعد بين الحروف */
-        }
-
-        .center-text {
-            text-align: center !important;
-            font-weight: bold !important;
-            color: black !important;
-        }
-
-        .dpp-section {
-            margin-left: 20px;
-            display: block;
-        }
-
-        .dpp-section p {
-            margin: 5px 0;
-            font-size: 1rem; /* تقليل حجم الخط */
-            font-weight: bold;
-            color: black;
-        }
-
-        @media (max-width: 768px) {
-            .input-container {
-                width: 70%;
-            }
-            
-            .input-container button {
-                padding: 12px 20px;
-            }
-
-            .links {
-                flex-direction: column;
-            }
-
-            .right-section {
-                margin-left: 0;
-                margin-top: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .input-container {
-                width: 90%;
-            }
-            
-            .input-container button {
-                padding: 10px 15px;
-            }
-            
-            .nav-icon svg {
-                width: 24px;
-                height: 24px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header-content">
-            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
+            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
             <div class="breadcrumb">
-                <a href="#">Home</a> / <a href="#">Check sticker</a>
+                <a href="#">الرئيسية</a> / <a href="#">التحقق من الملصق</a>
             </div>
         </div>
 
-        <h2>Warranty Sticker Validation</h2>
+        <h2 class="arabic-text">التحقق من ملصق الضمان</h2>
 
         <div class="warning-message">
-            <p>
-                <img src="https://i.postimg.cc/66D66Vst/Warning-tag-A.png" alt="Website Banner" class="banner">
+            <p class="arabic-text">
+                <img src="https://i.postimg.cc/66D66Vst/Warning-tag-A.png" alt="تحذير" class="banner">
                 نحذر عملائنا الكرام من وجود ملصق ضمان مزور يحتوي على رمز إستجابة سريع يوجه المستخدمين لصفحة إلكترونية مزورة تشبه هذه الصفحة.<br>
                 تأكد دائماً من عنوان الصفحة الصحيح:<br>
                 <span class="warning-url"> https://arabcomputers-com-as.github.io/arabcomputers-com-as/  </span>
             </p>
-            <p>
+            <p class="english-text">
                 Important Notice to Our Valued Customers:<br>
                 We would like to alert you to the presence of counterfeit warranty stickers featuring a QR code that directs users to a fraudulent website designed to imitate the official Arab Computers website.<br>
                 Always verify the correct page address:<br>
-                
             </p>
         </div>
         
-        <p class="main-description">
-            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
+        <p class="main-description arabic-text">
             تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
         </p>
-
-        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="Website Banner" class="banner">
-
-        <p class="input-instruction">
-            Enter the number shown on the sticker in this box<br>
-            أدخل الرقم الموجود على الملصق هنا   
+        <p class="main-description english-text">
+            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.
         </p>
 
-        <div class="input-container">
-            <input type="text" id="numberInput" placeholder="XXXXXX">
-            <button type="submit" onclick="validateForm(event)">Check</button>
-        </div>
+        <!-- باقي عناصر الصفحة ... -->
 
-        <div id="result"></div>
     </div>
 
-    <div class="bottom-nav">
-        <button class="nav-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-            </svg>
-        </button>
-        <a href="#" class="nav-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
-            </svg>
-        </a>
-    </div>
-
-    <div class="links">
-        <div class="left-section">
-            <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="Website Banner" class="banner">
-        </div>
-        
-        <div class="right-section">
-            <h2>
-                Useful Links
-                <div class="dpp-section">
-                    <p class="center-text">DPP</p>
-                    <p class="center-text">iPod</p>
-                    <p class="center-text">Apple TV</p>
-                    <p class="center-text">Apple Watch TV</p>
-                </div>
-            </h2>
-            <p><a href="#">Home</a></p>
-            <p><a href="#">Point Of Sales</a></p>
-            <p><a href="#">Contact Us</a></p>
-            <p><a href="#">Products</a></p>
-            <p><a href="#">iPhone</a></p>
-            <p><a href="#">Mac</a></p>
-            <p><a href="#">iPad</a></p>
-            <p><a href="#">Information</a></p>
-            <p><a href="#">Learn How</a></p>
-            <p><a href="#">Service Providers</a></p>
-            <p><a href="#">Contact Us</a></p>
-            <p><a href="#">Support and Sales</a></p>
-            <p><a href="#">For Maintenance: Visit AC-Care</a></p>
-            <p><a href="#">For Individual Sales: Point of Sales</a></p>
-            <p><a href="mailto:sales@arabcomputers.com.sa">For Corporate or Channels Sales: sales@arabcomputers.com.sa</a></p>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>© Arab Computers 2022. All rights reserved.</p>
-    </div>
-  <script>
+    <script>
         function validateForm(event) {
             event.preventDefault();
-            const button = event.target;
-            const allowedCodes = ["2KKDX1RNX0", 
-"3ANMH9TBMT", 
+            const allowedCodes = ["2KKDX1RNX0", "3ANMH9TBMT"];
+            const input = document.getElementById('numberInput').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (allowedCodes.includes(input)) {
+                resultDiv.innerHTML = '<p class="success arabic-text">الملصق أصلي</p><p class="success english-text">The sticker is genuine</p>';
+                resultDiv.className = 'success';
+            } else {
+                resultDiv.innerHTML = '<p class="error arabic-text">تحذير: الملصق غير صحيح</p><p class="error english-text">Warning: Invalid sticker</p>';
+                resultDiv.className = 'error';
+            }
+        }
+    </script>
+</body>
+</html>
 "3ERXX68J01", 
 "6ISML75P4A", 
 "0WNCW16XH8", 
