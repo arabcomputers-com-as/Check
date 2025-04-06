@@ -5,34 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>التحقق من ملصق الضمان | Arab Computers</title>
     <style>
-        /* الخطوط الرئيسية */
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
-        
-        :root {
-            --red: #e30613;
-            --gold: #a8822b;
-            --dark-gray: #333333;
-            --medium-gray: #777777;
-        }
-
+        /* الخطوط - مطابقة للصورة */
         body {
-            font-family: 'Tajawal', 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
-            color: var(--dark-gray);
-            line-height: 1.6;
+            color: #000000;
+            line-height: 1.5;
+        }
+        
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Arial Arabic', sans-serif;
+            font-weight: normal;
+        }
+        
+        .english-text {
+            font-family: 'Arial', sans-serif;
+            direction: ltr;
+            text-align: left;
         }
 
+        /* الهيكل العام - مطابق للصورة */
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        /* الهيدر */
+        
         .header {
             display: flex;
             justify-content: space-between;
@@ -41,73 +42,55 @@
             border-bottom: 1px solid #eee;
             margin-bottom: 20px;
         }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
+        
         .logo-text {
             font-weight: bold;
             font-size: 18px;
-            margin-right: 10px;
-            color: var(--gold);
+            color: #a8822b;
         }
-
+        
         .breadcrumb {
             font-size: 14px;
-            color: var(--medium-gray);
+            color: #777777;
         }
-
-        .breadcrumb a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        /* محتوى التحذير */
+        
+        /* قسم التحذير - مطابق للصورة */
         .warning-section {
             margin: 30px 0;
             text-align: center;
         }
-
+        
         .warning-title {
-            color: var(--red);
+            color: #cc0000;
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 15px;
         }
-
+        
         .warning-text {
             font-size: 16px;
             margin-bottom: 10px;
         }
-
+        
         .warning-url {
-            color: var(--red);
+            color: #0066cc;
             font-weight: bold;
-            font-size: 16px;
             display: block;
             margin: 10px 0;
         }
-
-        /* قسم الإدخال */
+        
+        /* قسم الإدخال - مطابق للصورة */
         .input-section {
             text-align: center;
             margin: 30px 0;
         }
-
+        
         .input-title {
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 15px;
         }
-
-        .input-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
+        
         .sticker-input {
             width: 250px;
             padding: 10px 15px;
@@ -116,9 +99,9 @@
             font-size: 16px;
             text-align: center;
         }
-
+        
         .submit-btn {
-            background-color: var(--gold);
+            background-color: #a8822b;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -127,8 +110,8 @@
             cursor: pointer;
             margin-right: 10px;
         }
-
-        /* الفوتر */
+        
+        /* الفوتر - مطابق للصورة */
         .footer {
             margin-top: 40px;
             padding-top: 20px;
@@ -137,35 +120,24 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
-
+        
         .footer-section {
             flex: 1;
             min-width: 200px;
             margin-bottom: 20px;
         }
-
+        
         .footer-title {
             font-weight: bold;
-            color: var(--gold);
+            color: #a8822b;
             margin-bottom: 10px;
         }
-
+        
         .footer-links a {
             display: block;
-            color: var(--medium-gray);
+            color: #777777;
             text-decoration: none;
             margin-bottom: 5px;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-
-        /* النص الإنجليزي */
-        .english-text {
-            font-family: Arial, sans-serif;
-            direction: ltr;
-            text-align: left;
         }
     </style>
 </head>
@@ -173,28 +145,26 @@
     <div class="container">
         <!-- الهيدر -->
         <div class="header">
-            <div class="logo-container">
-                <div class="logo-text">Arab Computers</div>
-            </div>
+            <div class="logo-text">Arab Computers</div>
             <div class="breadcrumb">
                 <a href="#">Home</a> » Check sticker
             </div>
         </div>
 
         <!-- العنوان الرئيسي -->
-        <h1 style="text-align: center; font-size: 24px; color: var(--dark-gray); margin-bottom: 30px;">
+        <h1 class="english-text" style="text-align: center; font-size: 24px; margin-bottom: 30px;">
             Warranty sticker validation
         </h1>
 
         <!-- قسم التحذير -->
         <div class="warning-section">
-            <div class="warning-title">نحذر عملائنا الكرام من وجود ملصق ضمان مزور</div>
-            <div class="warning-text">بحثوي على رمز إستجابة سريع بوجه المستخدمين</div>
-            <div class="warning-text">لصفحة الكترونية مزورة تشبه هذه الصفحة</div>
-            <div class="warning-text">تأكد دائماً من عنوان الصفحة الصحيح:</div>
+            <div class="warning-title arabic-text">نحذر عملائنا الكرام من وجود ملصق ضمان مزور</div>
+            <div class="warning-text arabic-text">بحثوي على رمز إستجابة سريع بوجه المستخدمين</div>
+            <div class="warning-text arabic-text">لصفحة الكترونية مزورة تشبه هذه الصفحة</div>
+            <div class="warning-text arabic-text">تأكد دائماً من عنوان الصفحة الصحيح:</div>
             <span class="warning-url">arabcomputers.com.sa/check-sticker</span>
 
-            <div class="english-text" style="margin-top: 30px; text-align: left;">
+            <div class="english-text" style="margin-top: 30px;">
                 <p><strong>Important Notice to Our Valued Customers:</strong></p>
                 <p>We would like to alert you to the presence of counterfeit warranty stickers featuring a QR code that directs users to a fraudulent website designed to imitate the official Arab Computers website.</p>
                 <p>Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.</p>
@@ -203,10 +173,10 @@
 
         <!-- قسم الإدخال -->
         <div class="input-section">
-            <div class="input-title">Enter the number shown on the sticker in this box:</div>
+            <div class="input-title english-text">Enter the number shown on the sticker in this box:</div>
             <div class="input-container">
                 <input type="text" class="sticker-input" placeholder="أدخل الرقم الموجود على الملصق">
-                <button class="submit-btn">تحقق</button>
+                <button class="submit-btn arabic-text">تحقق</button>
             </div>
         </div>
 
@@ -265,10 +235,10 @@
     </div>
 
     <script>
+        // يمكنك إضافة أي سكريبتات تحتاجها هنا
         document.querySelector('.submit-btn').addEventListener('click', function() {
-            const input = document.querySelector('.sticker-input').value;
-            // يمكنك إضافة منطق التحقق هنا
-            alert('جارٍ التحقق من الرقم: ' + input);
+            const inputValue = document.querySelector('.sticker-input').value;
+            alert('جارٍ التحقق من الرقم: ' + inputValue);
         });
     </script>
 </body>
