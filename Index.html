@@ -5,72 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>التحقق من ملصق الضمان</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
         
         :root {
-            font-size: 15px; /* حجم الخط العام */
+            font-size: 15px;
         }
 
-        /* ------ الخطوط ------ */
         body {
-            font-family: 'Amiri', serif; /* خط مشابه للصورة */
+            font-family: 'Tajawal', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5; /* لون الخلفية */
-            color: #2d2d2d; /* لون النص الأساسي (رمادي داكن) */
+            background-color: #f8f9fa;
+            color: #444;
             line-height: 1.6;
         }
 
         .arabic-text {
-            font-family: 'Amiri', serif;
-            font-weight: 400; /* سماكة الخط العادية */
-            color: #1a1a1a; /* أسود ناعم للنصوص العربية */
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 500;
+            color: #2d4059;
+            line-height: 1.8;
         }
 
         .english-text {
-            font-family: 'Amiri', serif; /* نفس الخط للغة الإنجليزية */
-            color: #4a4a4a; /* رمادي داكن للإنجليزية */
+            font-family: 'Tajawal', sans-serif;
+            color: #666;
             font-weight: 400;
         }
 
-        /* ------ الألوان الدقيقة ------ */
-        .warning-message {
-            color: #c0392b !important; /* أحمر داكن مطابق للصورة */
+        .container {
+            max-width: 95%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
 
-        .warning-url {
-            color: #922b21 !important; /* أحمر أغمق للروابط */
+        .header-content {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin-bottom: 25px;
         }
 
-        .input-container button {
-            background-color: #9c7b3d !important; /* ذهبي ترابي كما في الصورة */
+        .logo {
+            width: 110px;
+            margin-bottom: 15px;
         }
 
-        /* ------ تعديلات دقيقة على التنسيقات ------ */
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #777;
+            margin: 12px 0;
+        }
+
         h2 {
-            font-size: 1.4rem; /* حجم أكبر للعناوين */
-            color: #2c3e50; /* لون العنوان الداكن */
+            color: #1a3b5d;
+            font-size: 1.5rem;
+            font-weight: 700;
             margin: 25px 0;
         }
 
-        .input-container input {
-            font-family: 'Amiri', serif; /* تطبيق الخط على حقل الإدخال */
-            color: #1a1a1a; /* لون النص داخل الحقل */
+        .warning-message {
+            color: #c21717;
+            margin: 30px 0;
+            font-weight: 600;
         }
 
-        /* بقية الأنماط كما هي دون تغيير */
-        .container { max-width: 95%; margin: 30px auto; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-        .header-content { position: sticky; top: 0; background: white; z-index: 1000; padding: 10px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .logo { width: 100px; margin-bottom: 10px; }
-        .breadcrumb { font-size: 0.9rem; color: #777; margin: 10px 0 15px 0; }
-        .input-container { width: 45%; max-width: 300px; border: 2px solid #cccccc; border-radius: 25px; margin: 10px auto; height: 40px; }
-        .success { color: #155724; background: #d4edda; }
-        .error { color: #721c24; background: #f8d7da; }
+        .warning-url {
+            color: #a52a2a;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .banner {
+            width: 100%;
+            max-height: 180px;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            width: 50%;
+            max-width: 320px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            margin: 20px auto;
+            height: 45px;
+        }
+
+        .input-container input {
+            font-family: 'Tajawal', sans-serif;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .input-container button {
+            background-color: #94763c;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 600;
+            padding: 0 25px;
+        }
+
+        .success {
+            color: #155724;
+            background: #d4edda;
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .error {
+            color: #721c24;
+            background: #f8d7da;
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .footer-links a {
+            color: #94763c;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
-    <!-- باقي الهيكل كما هو دون أي تغيير -->
     <div class="container">
         <div class="header-content">
             <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
@@ -95,7 +156,6 @@
             </p>
         </div>
         
-        <!-- باقي العناصر دون تعديل -->
         <div class="input-container">
             <input type="text" id="numberInput" placeholder="أدخل الرقم الموجود على الملصق">
             <button onclick="validateSticker()">تحقق</button>
@@ -104,11 +164,40 @@
         <div id="result"></div>
     </div>
 
-    <!-- السكريبتات نفسها -->
     <script>
         const allowedCodes = ["2KKDX1RNX0", "3ANMH9TB78", "3QFD18EA78"];
-        function validateSticker() { 
-            // الكود كما هو...
+        
+        function validateSticker() {
+            const button = document.querySelector('button');
+            const input = document.getElementById('numberInput').value.trim().toUpperCase();
+            const resultElement = document.getElementById('result');
+            
+            button.classList.add('pressed');
+            resultElement.innerHTML = '';
+            
+            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+            
+            setTimeout(() => {
+                let message = '';
+                let className = '';
+                
+                if (usedCodes.includes(input)) {
+                    message = "❌ تم استخدام هذا الرمز مسبقاً | Code already used";
+                    className = 'error';
+                } else if (allowedCodes.includes(input)) {
+                    usedCodes.push(input);
+                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+                    message = "✅ الرمز صحيح | Valid code";
+                    className = 'success';
+                } else {
+                    message = "❌ الرمز غير صحيح | Invalid code";
+                    className = 'error';
+                }
+                
+                resultElement.innerHTML = `<p class="${className} arabic-text">${message.split('|')[0]}</p>
+                                          <p class="${className} english-text">${message.split('|')[1]}</p>`;
+                button.classList.remove('pressed');
+            }, 300);
         }
     </script>
 </body>
