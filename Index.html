@@ -70,7 +70,6 @@
             margin: 0 auto 30px auto;
         }
         
-        /* النص العربي المخصص */
         .arabic-text {
             font-family: 'Traditional Arabic', 'Arial Arabic', 'Simplified Arabic', sans-serif;
             font-size: 1rem;
@@ -83,8 +82,11 @@
             margin: 25px 0;
             padding: 0;
             text-align: center;
-            font-weight: bold;
             font-size: 0.9rem;
+        }
+
+        .normal-weight {
+            font-weight: normal;
         }
 
         .warning-url {
@@ -92,6 +94,7 @@
             font-weight: bold;
             color: darkred;
         }
+
         .banner {
             width: 100%;
             max-height: 200px;
@@ -298,20 +301,20 @@
 
         <h2>Warranty sticker validation</h2>
 
-            <div class="warning-message">
+        <div class="warning-message">
             <p>
                 <img src="https://i.postimg.cc/66D66Vst/Warning-tag-A.png" alt="Website Banner" class="banner">
                 نحذر عملائنا الكرام من وجود ملصق ضمان مزور يحتوي على رمز إستجابة سريع يوجه المستخدمين لصفحة إلكترونية مزورة تشبه هذه الصفحة.<br>
                 تأكد دائماً من عنوان الصفحة الصحيح:<br>
                 <span class="warning-url">https://arabcomputers-com-as.github.io/arabcomputers-com-as/</span>
             </p>
-            <p>
+            <p class="normal-weight">
                 Important Notice to Our Valued Customers:<br>
                 We would like to alert you to the presence of counterfeit warranty stickers featuring a QR code that directs users to a fraudulent website designed to imitate the official Arab Computers website.<br>
                 Always verify the correct page address:<br>
-                
             </p>
-               </div> 
+        </div>
+
         <p class="main-description">
             Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
             <span class="arabic-text">تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</span>
@@ -332,7 +335,6 @@
         <div id="result"></div>
     </div>
 
-    <!-- الأزرار في الجزء السفلي -->
     <div class="bottom-buttons">
         <button class="menu-button">☰</button>
         <button class="home-button">
@@ -342,7 +344,6 @@
         </button>
     </div>
 
-    <!-- روابط مفيدة -->
     <div class="links">
         <div class="left-section">
             <div>
@@ -383,9 +384,7 @@
         function validateForm(event) {
             event.preventDefault();
             const button = event.target;
-            const allowedCodes = ["2KKDX1RNX0", 
-"3ANMH9TBMT", "8TDLW12RNJ", 
-"3QFD18EA78" ];
+            const allowedCodes = ["2KKDX1RNX0", "3ANMH9TBMT", "8TDLW12RNJ", "3QFD18EA78"];
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
