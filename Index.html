@@ -91,6 +91,8 @@
 
         .warning-text-normal {
             font-weight: normal;
+            margin-top: -10px;
+            line-height: 1.4;
         }
 
         .notice-title {
@@ -101,7 +103,7 @@
         .warning-url {
             text-decoration: underline;
             font-weight: bold;
-            color: darkred;
+            color: #000000; /* تغيير اللون إلى أسود */
         }
 
         .banner {
@@ -318,7 +320,7 @@
                 <span class="warning-url">https://arabcomputers-com-as.github.io/arabcomputers-com-as/</span>
             </p>
             <p class="warning-text-normal">
-                <span class="notice-title">Important Notice to Our Valued Customers:</span><br>
+                <span class="notice-title">Important Notice to Our Valued Customers:</span>
                 We would like to alert you to the presence of counterfeit warranty stickers featuring a QR code that directs users to a fraudulent website designed to imitate the official Arab Computers website.<br>
                 Always verify the correct page address:<br>
             </p>
@@ -406,21 +408,4 @@
 
             setTimeout(() => {
                 if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
-                    resultElement.className = 'error';
-                } else if (allowedCodes.includes(numberInput)) {
-                    usedCodes.push(numberInput);
-                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
-                    resultElement.className = 'success';
-                } else {
-                    resultElement.textContent = "Code not found ❌ هذا الرمز غير موجود !";
-                    resultElement.className = 'error';
-                }
-                
-                button.classList.remove('pressed');
-            }, 500);
-        }
-    </script>
-</body>
-</html>
+                    resultElement.textContent = "
