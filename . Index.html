@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warranty sticker validation</title>
+    <title>التحقق من ملصق الضمان | Warranty Sticker Validation</title>
     <style>
         * {
             margin: 0;
@@ -11,12 +11,24 @@
             box-sizing: border-box;
         }
 
+        /* تعريف الخطوط */
+        @font-face {
+            font-family: 'Simplified Arabic';
+            src: local('Simplified Arabic'), 
+                 local('Arabic Transparent');
+        }
+        
         body {
-            font-family: Tahoma, Arial, sans-serif;
+            font-family: 'Simplified Arabic', 'Tahoma', Arial, sans-serif;
             text-align: center;
             background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
+        }
+
+        .english-text {
+            font-family: 'Tahoma', Arial, sans-serif;
+            direction: ltr;
         }
 
         .container {
@@ -27,7 +39,7 @@
         }
 
         .header-content {
-            text-align: left;
+            text-align: right;
             margin-bottom: 30px;
         }
 
@@ -58,7 +70,6 @@
             font-weight: 700;
             text-align: center;
             margin: 20px 0;
-            letter-spacing: 1px;
         }
 
         .main-description {
@@ -68,13 +79,6 @@
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 30px auto;
-        }
-        
-        .arabic-text {
-            font-family: Tahoma, Arial, sans-serif;
-            font-size: 1rem;
-            direction: rtl;
-            display: inline-block;
         }
         
         .warning-message {
@@ -193,17 +197,17 @@
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
-            text-align: left;
+            text-align: right;
         }
 
         .right-section {
             flex: 1;
             margin-left: 20px;
-            text-align: left;
+            text-align: right;
         }
 
         .right-section h2 {
-            text-align: left;
+            text-align: right;
             font-size: 1.2rem;
             margin: 0;
         }
@@ -310,41 +314,43 @@
         <div class="header-content">
             <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
             <div class="breadcrumb">
-                <a href="#">Home</a> / <a href="#">Check sticker</a>
+                <a href="#">الرئيسية</a> / <a href="#">التحقق من الملصق</a>
             </div>
         </div>
 
-        <h2>Warranty sticker validation</h2>
+        <h2 lang="ar">التحقق من ملصق الضمان</h2>
+        <h2 lang="en" class="english-text">Warranty Sticker Validation</h2>
 
         <div class="warning-message">
-            <p class="warning-text-bold">
+            <p class="warning-text-bold" lang="ar">
                 <img src="https://i.postimg.cc/66D66Vst/Warning-tag-A.png" alt="Website Banner" class="banner">
                 نحذر عملائنا الكرام من وجود ملصق ضمان مزور يحتوي على رمز إستجابة سريع يوجه المستخدمين لصفحة إلكترونية مزورة تشبه هذه الصفحة.<br>
                 تأكد دائمًا من عنوان الصفحة الصحيح:
-                <span class="warning-url">https://arabcomputers-com-as.github.io/arabcomputers-com-as/</span>
+                <span class="warning-url">arabcomputers.com.sa/check-sticker</span>
             </p>
-            <p class="warning-text-normal">
+            <p class="warning-text-normal" lang="en" class="english-text">
                 <span class="notice-title">Important Notice to Our Valued Customers:</span>
                 We would like to alert you to the presence of counterfeit warranty stickers featuring a QR code that directs users to a fraudulent website designed to imitate the official Arab Computers website.<br>
                 Always verify the correct page address:<br>
+                <span class="warning-url">arabcomputers.com.sa/check-sticker</span>
             </p>
         </div>
 
         <p class="main-description">
-            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
-            <span class="arabic-text">تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</span>
+            <span lang="en" class="english-text">Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.</span><br>
+            <span lang="ar">تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</span>
         </p>
 
         <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="Website Banner" class="banner">
 
         <p class="input-instruction">
-            Enter the number shown on the sticker in this box<br>
-            أدخل الرقم الموجود على الملصق هنا   
+            <span lang="en" class="english-text">Enter the number shown on the sticker in this box</span><br>
+            <span lang="ar">أدخل الرقم الموجود على الملصق هنا</span>   
         </p>
 
         <div class="input-container">
             <input type="text" id="numberInput" placeholder="XXXXXX">
-            <button type="submit" onclick="validateForm(event)">Check</button>
+            <button type="submit" onclick="validateForm(event)">تحقق</button>
         </div>
 
         <div id="result"></div>
@@ -360,16 +366,12 @@
     </div>
 
     <div class="links">
-        <div class="left-section">
-            <div>
-                <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
-            </div>
-        </div>
         <div class="right-section">
-            <h2>Useful Links</h2>
-            <p><a href="#">Home</a></p>
-            <p><a href="#">Point Of Sales</a></p>
-            <p><a href="#">Contact Us</a></p>
+            <h2 lang="ar">روابط مفيدة</h2>
+            <h2 lang="en" class="english-text">Useful Links</h2>
+            <p><a href="#">الرئيسية</a></p>
+            <p><a href="#">نقاط البيع</a></p>
+            <p><a href="#">اتصل بنا</a></p>
         </div>
         <div class="dpp-section">
             <p class="center-text">DPP</p>
@@ -378,21 +380,24 @@
             <p class="center-text">Apple Watch TV</p>
         </div>  
         <div class="right-section">
-            <h2>Products</h2>
+            <h2 lang="ar">المنتجات</h2>
+            <h2 lang="en" class="english-text">Products</h2>
             <p><a href="#">iPhone</a></p>
             <p><a href="#">Mac</a></p>
             <p><a href="#">iPad</a></p>
         </div>
         <div class="right-section">
-            <h2>Information</h2>
-            <p><a href="##">Learn How</a></p>
-            <p><a href="##">Service Providers</a></p>
-            <p><a href="##">Contact Us</a></p>
+            <h2 lang="ar">معلومات</h2>
+            <h2 lang="en" class="english-text">Information</h2>
+            <p><a href="##">كيفية الاستخدام</a></p>
+            <p><a href="##">مزودو الخدمة</a></p>
+            <p><a href="##">اتصل بنا</a></p>
         </div>
         <div class="right-section">
-            <h2>Support and Sales</h2>
-            <p><a href="#">For Maintenance: Visit AC-Care</a></p>
-            <p><a href="#">For Individual Sales: Point of Sales</a></p>
+            <h2 lang="ar">الدعم والمبيعات</h2>
+            <h2 lang="en" class="english-text">Support and Sales</h2>
+            <p><a href="#">للصيانة: زوروا AC-Care</a></p>
+            <p><a href="#">للمبيعات الفردية: نقاط البيع</a></p>
         </div>
     </div>
     <script>
@@ -412,15 +417,15 @@
 
             setTimeout(() => {
                 if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                    resultElement.textContent = "تم استخدام هذا الرمز مسبقًا ❌ code is already used!";
                     resultElement.className = 'error';
                 } else if (allowedCodes.includes(numberInput)) {
                     usedCodes.push(numberInput);
                     localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
+                    resultElement.textContent = "هذا الرمز صحيح ✅ The code is correct!";
                     resultElement.className = 'success';
                 } else {
-                    resultElement.textContent = "Code not found ❌ هذا الرمز غير موجود !";
+                    resultElement.textContent = "هذا الرمز غير موجود ❌ Code not found!";
                     resultElement.className = 'error';
                 }
                 
