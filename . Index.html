@@ -413,4 +413,25 @@
             resultElement.className = '';
             resultElement.textContent = '';
 
-            const usedCodes =
+            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+
+            setTimeout(() => {
+                if (usedCodes.includes(numberInput)) {
+                    resultElement.textContent = "تم استخدام هذا الرمز مسبقًا ❌ code is already used!";
+                    resultElement.className = 'error';
+                } else if (allowedCodes.includes(numberInput)) {
+                    usedCodes.push(numberInput);
+                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+                    resultElement.textContent = "هذا الرمز صحيح ✅ The code is correct!";
+                    resultElement.className = 'success';
+                } else {
+                    resultElement.textContent = "هذا الرمز غير موجود ❌ Code not found!";
+                    resultElement.className = 'error';
+                }
+                
+                button.classList.remove('pressed');
+            }, 500);
+        }
+    </script>
+</body>
+</html>
