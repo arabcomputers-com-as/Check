@@ -13,13 +13,13 @@
 
         /* تعريف الخطوط */
         @font-face {
-            font-family: 'Simplified Arabic';
-            src: local('Simplified Arabic'), 
-                 local('Arabic Transparent');
+            font-family: 'The Sans Plain';
+            src: local('The Sans Plain'), 
+                 local('TheSansPlain');
         }
         
         body {
-            font-family: 'Simplified Arabic', 'Tahoma', Arial, sans-serif;
+            font-family: 'The Sans Plain', 'Simplified Arabic', 'Tahoma', Arial, sans-serif;
             text-align: center;
             background-color: #f4f4f9;
             color: #333;
@@ -413,25 +413,4 @@
             resultElement.className = '';
             resultElement.textContent = '';
 
-            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
-
-            setTimeout(() => {
-                if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "تم استخدام هذا الرمز مسبقًا ❌ code is already used!";
-                    resultElement.className = 'error';
-                } else if (allowedCodes.includes(numberInput)) {
-                    usedCodes.push(numberInput);
-                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                    resultElement.textContent = "هذا الرمز صحيح ✅ The code is correct!";
-                    resultElement.className = 'success';
-                } else {
-                    resultElement.textContent = "هذا الرمز غير موجود ❌ Code not found!";
-                    resultElement.className = 'error';
-                }
-                
-                button.classList.remove('pressed');
-            }, 500);
-        }
-    </script>
-</body>
-</html>
+            const usedCodes =
