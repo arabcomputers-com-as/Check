@@ -5,44 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تحذير رسمي</title>
     <style>
-        /* 1. محاولة استخدام الخط إن كان مثبتاً محلياً */
+        /* تعريف الخط الرئيسي */
+        @font-face {
+            font-family: 'GF Fayed Alqira’at Aleashr';
+            src: url('https://cdn.islamic.network/fonts/gf-fayed/v1/GF-Fayed-Alqiraat-Aleashr.woff2') format('woff2'),
+                 url('https://cdn.islamic.network/fonts/gf-fayed/v1/GF-Fayed-Alqiraat-Aleashr.woff') format('woff');
+            font-display: swap;
+        }
+        
         .custom-warning {
-            font-family: 'The Sans Plain', 'TheSansPlain', 'Noto Sans Arabic', sans-serif;
-            font-size: 1.2rem;
-            color: #d9534f;
+            font-family: 'GF Fayed Alqira’at Aleashr', 'Noto Naskh Arabic', serif;
+            font-size: 1.3rem;
+            color: #c00;
             line-height: 1.8;
             text-align: right;
-            padding: 15px;
-            border-right: 3px solid #d9534f;
-        }
-        
-        /* 2. استيراد بديل مماثل من جوجل فونتس */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
-        
-        /* 3. ضمان التطبيق حتى مع عدم وجود الخط الأصلي */
-        .font-fallback {
-            font-family: 'Noto Sans Arabic', sans-serif;
+            padding: 20px;
+            background: #fff9f9;
+            border-right: 4px solid #c00;
+            border-radius: 0 8px 8px 0;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
     </style>
+    
+    <!-- استيراد خط بديل من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- العنصر الرئيسي مع فحص ديناميكي للخط -->
-    <div class="custom-warning" id="warningText">
+    <div class="custom-warning">
         نحذر عملائنا الكرام من وجود ضمان مزور في
     </div>
 
-    <!-- نظام تحميل الخط الذكي -->
+    <!-- نظام تحميل متقدم للخط -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const warningElement = document.getElementById('warningText');
-        
-        // التحقق من وجود الخط قبل التطبيق
-        document.fonts.load('1em "The Sans Plain"').then(() => {
-            if (!document.fonts.check('1em "The Sans Plain"')) {
-                warningElement.classList.add('font-fallback');
-                console.log('تم استخدام الخط البديل (Noto Sans Arabic)');
-            }
-        });
+    document.fonts.ready.then(() => {
+        const el = document.querySelector('.custom-warning');
+        if (!document.fonts.check('16px "GF Fayed Alqira’at Aleashr"')) {
+            el.style.fontFamily = "'Noto Naskh Arabic', serif";
+            console.log('تم التحميل بالخط البديل');
+        }
     });
     </script>
 </body>
