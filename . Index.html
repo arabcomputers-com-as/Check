@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تحذير من ضمان مزور</title>
     <style>
-        /* تعريف خط Alaq Dimashq */
+        /* تعريف خط The Sans Plain */
         @font-face {
-            font-family: 'Alaq Dimashq';
-            src: url('https://cdn.rawgit.com/alaq-dimashq/alaq-dimashq-font/master/fonts/AlaqDimashq-Regular.ttf') format('truetype');
+            font-family: 'The Sans Plain';
+            src: local('TheSansPlain'),
+                 local('The Sans Plain'),
+                 url('https://example.com/path/to/TheSansPlain.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
         
         body {
-            font-family: 'Alaq Dimashq', 'Traditional Arabic', 'Simplified Arabic', Tahoma, sans-serif;
+            font-family: 'The Sans Plain', 'Simplified Arabic', Tahoma, sans-serif;
             background-color: #f9f9f9;
             padding: 20px;
             line-height: 1.6;
             color: #333;
+            text-align: right;
         }
         
         .warning-container {
@@ -26,15 +29,13 @@
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
+            border: 1px solid #eee;
             border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: right;
         }
         
         .warning-text {
             font-size: 1.1rem;
             margin-bottom: 15px;
-            text-align: right;
         }
         
         .warning-bold {
@@ -43,16 +44,14 @@
         }
         
         .warning-url {
-            display: block;
             font-weight: bold;
-            color: #2c3e50;
             text-decoration: underline;
-            margin-top: 10px;
-            direction: ltr;
+            color: #0066cc;
+            display: inline-block;
+            margin-top: 5px;
+            direction: ltr; /* للحفاظ على اتجاه النص الإنجليزي */
         }
     </style>
-    <!-- رابط CDN لخط Alaq Dimashq -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/alaq-dimashq/alaq-dimashq-font/master/css/alaq-dimashq.css">
 </head>
 <body>
     <div class="warning-container">
@@ -61,7 +60,7 @@
             رمز إستجابة سريعة يوجه المستخدمين لصفحة إلكترونية مزورة تشبه هذه الصفحة.
         </p>
         <p class="warning-text">
-            تأكد دائمًا من عنوان الصفحة الصحيحة:
+            تأكد دائمًا من عنوان الصفحة الصحيحة:<br>
             <span class="warning-url">arabcomputers.com.sa/check-sticker</span>
         </p>
     </div>
