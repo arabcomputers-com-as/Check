@@ -308,7 +308,9 @@
 <body>
     <div class="container">
         <div class="header-content">
-            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
+            <a href="https://arabcomputers.com.sa">
+                <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
+            </a>
             <div class="breadcrumb">
                 <a href="#">Home</a> / <a href="#">Check sticker</a>
             </div>
@@ -339,7 +341,7 @@
 
         <p class="input-instruction">
             Enter the number shown on the sticker in this box<br>
-            أدخل الرقم الموجود على الملصق هنا   
+            أدخل الرقم الموجود على الملصق هنا    
         </p>
 
         <div class="input-container">
@@ -395,46 +397,31 @@
             <p><a href="#">For Individual Sales: Point of Sales</a></p>
         </div>
     </div>
+
     <script>
-        function validateForm(event) {
-            event.preventDefault();
-            const button = event.target;
-            const allowedCodes = ["2KKDX1RNX0","3ANMH9TBMT", 
-"9KM8W29CZR",
-"70JWY71Q4A",
-"8NIOQ48MSA",
-"5EZ8N633LP",
-"3QFD18EA78" ];
-            const numberInput = document.getElementById("numberInput").value;
-            const resultElement = document.getElementById("result");
-            
-            button.classList.add('pressed');
-
-            resultElement.className = '';
-            resultElement.textContent = '';
-
-            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
-
-            setTimeout(() => {
-                if (usedCodes.includes(numberInput)) {
-                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
-                    resultElement.className = 'error';
-                } else if (allowedCodes.includes(numberInput)) {
-                    usedCodes.push(numberInput);
-                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
-                    resultElement.className = 'success';
-                } else {
-                    resultElement.textContent = "Code not found ❌ هذا الرمز غير موجود !";
-                    resultElement.className = 'error';
-                }
-                
-                button.classList.remove('pressed');
-            }, 500);
+        // دالة تجزئة سريعة وفعالة
+        function simpleHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash; // تحويل إلى عدد صحيح 32 بت
+            }
+            return Math.abs(hash).toString(16);
         }
-    </script>
-</body>
-</html>
 
+        // قاعدة بيانات الرموز باستخدام التجزئة
+        const codeDatabase = {};
 
+        // تحميل الرموز على دفعات
+        async function loadCodesInBatches() {
+            console.log("بدء تحميل الرموز...");
+            
+            // تقسيم الرموز إلى دفعات (يمكنك إضافة المزيد من الرموز هنا)
+            const batches = [
+                // الدفعة 1 - الرموز الأصلية من الكود
+                ["70JWY71Q4A","78F6I74D9Q",
+"2QH3Y50GAK",
+"0UGMQ04A2C",
+"1TPMO06FQM",
 
