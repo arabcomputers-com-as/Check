@@ -213,7 +213,24 @@
         .links-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 10px 20px;
+        }
+
+        .link-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .link-left {
+            text-align: left;
+            flex: 1;
+        }
+
+        .link-right {
+            text-align: right;
+            flex: 1;
         }
 
         .links-column p {
@@ -383,16 +400,21 @@
         <div class="links-column">
             <h2>Useful Links</h2>
             <div class="links-grid">
-                <div>
-                    <p><a href="#">Home</a></p>
-                    <p><a href="#">Point Of Sales</a></p>
-                    <p><a href="#">Contact Us</a></p>
+                <div class="link-item">
+                    <div class="link-left"><a href="#">Home</a></div>
+                    <div class="link-right"><strong>DPP</strong></div>
                 </div>
-                <div>
-                    <p><strong>DPP</strong></p>
-                    <p><strong>iPod</strong></p>
-                    <p><strong>Apple TV</strong></p>
-                    <p><strong>Apple Watch</strong></p>
+                <div class="link-item">
+                    <div class="link-left"><a href="#">Point Of Sales</a></div>
+                    <div class="link-right"><strong>iPod</strong></div>
+                </div>
+                <div class="link-item">
+                    <div class="link-left"><a href="#">Contact Us</a></div>
+                    <div class="link-right"><strong>Apple TV</strong></div>
+                </div>
+                <div class="link-item">
+                    <div class="link-left"></div>
+                    <div class="link-right"><strong>Apple Watch</strong></div>
                 </div>
             </div>
         </div>
@@ -400,15 +422,17 @@
         <div class="links-column">
             <h2>Products</h2>
             <div class="links-grid">
-                <div>
-                    <p><a href="#">iPhone</a></p>
-                    <p><a href="#">Mac</a></p>
-                    <p><a href="#">iPod</a></p>
+                <div class="link-item">
+                    <div class="link-left"><a href="#">iPhone</a></div>
+                    <div class="link-right"><a href="#">iPad</a></div>
                 </div>
-                <div>
-                    <p><a href="#">iPad</a></p>
-                    <p><a href="#">Apple TV</a></p>
-                    <p><a href="#">Apple Watch</a></p>
+                <div class="link-item">
+                    <div class="link-left"><a href="#">Mac</a></div>
+                    <div class="link-right"><a href="#">Apple TV</a></div>
+                </div>
+                <div class="link-item">
+                    <div class="link-left"><a href="#">iPod</a></div>
+                    <div class="link-right"><a href="#">Apple Watch</a></div>
                 </div>
             </div>
         </div>
@@ -416,14 +440,17 @@
         <div class="links-column">
             <h2>Information</h2>
             <div class="links-grid">
-                <div>
-                    <p><a href="#">Learn How</a></p>
-                    <p><a href="#">Service Providers</a></p>
-                    <p><a href="#">Contact us</a></p>
+                <div class="link-item">
+                    <div class="link-left"><a href="#">Learn How</a></div>
+                    <div class="link-right"><a href="#">Terms and condition</a></div>
                 </div>
-                <div>
-                    <p><a href="#">Terms and condition</a></p>
-                    <p><a href="#">Condition</a></p>
+                <div class="link-item">
+                    <div class="link-left"><a href="#">Service Providers</a></div>
+                    <div class="link-right"><a href="#">Condition</a></div>
+                </div>
+                <div class="link-item">
+                    <div class="link-left"><a href="#">Contact us</a></div>
+                    <div class="link-right"></div>
                 </div>
             </div>
         </div>
