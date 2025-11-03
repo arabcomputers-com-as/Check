@@ -194,23 +194,39 @@
             justify-content: space-between;
             margin-top: 20px;
             text-align: left;
-            padding-left: 40px;
         }
 
-        .links-column {
+        .right-section {
             flex: 1;
+            margin-left: 20px;
             text-align: left;
-            padding: 0 15px;
         }
 
-        .links-column h2 {
+        .right-section h2 {
             text-align: left;
             font-size: 1.2rem;
-            margin: 0 0 10px 0;
-            color: #2c3e50;
+            margin: 0;
         }
 
-        .links-grid {
+        .right-section p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .center-text {
+            text-align: center !important;
+            font-weight: bold !important;
+            color: black !important;
+            margin: 5px 0;
+        }
+
+        .dpp-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* التعديلات الجديدة لقسم Useful Links فقط */
+        .useful-links-grid {
             display: flex;
             flex-direction: column;
             gap: 4px;
@@ -234,32 +250,11 @@
             padding-right: 20px;
         }
 
-        .links-column a {
-            color: #333;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .links-column a:hover {
-            color: #a8822b;
-            text-decoration: underline;
-        }
-
-        .contact-info {
-            margin-top: 8px;
-        }
-
-        .contact-info p {
-            margin: 3px 0;
-            line-height: 1.3;
-            font-size: 0.9rem;
-        }
-
         .bottom-buttons {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            padding: 8px 20px 8px 40px;
+            padding: 8px 20px;
             background-color: white;
             border-top: 1px solid #ddd;
             position: fixed;
@@ -316,12 +311,11 @@
 
             .links {
                 flex-direction: column;
-                padding-left: 20px;
             }
 
-            .links-column {
-                margin-top: 15px;
-                padding: 0 10px;
+            .right-section {
+                margin-left: 0;
+                margin-top: 20px;
             }
         }
 
@@ -391,9 +385,16 @@
     </div>
 
     <div class="links">
-        <div class="links-column">
+        <div class="left-section">
+            <div>
+                <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
+            </div>
+        </div>
+        
+        <!-- قسم Useful Links المعدل -->
+        <div class="right-section">
             <h2>Useful Links</h2>
-            <div class="links-grid">
+            <div class="useful-links-grid">
                 <div class="link-row">
                     <div class="link-left"><a href="#">Home</a></div>
                     <div class="link-right"><strong>DPP</strong></div>
@@ -409,50 +410,31 @@
             </div>
         </div>
 
-        <div class="links-column">
+        <div class="dpp-section">
+            <p class="center-text">DPP</p>
+            <p class="center-text">iPod</p>
+            <p class="center-text">Apple TV</p>
+            <p class="center-text">Apple Watch TV</p>
+        </div>  
+
+        <div class="right-section">
             <h2>Products</h2>
-            <div class="links-grid">
-                <div class="link-row">
-                    <div class="link-left"><a href="#">iPhone</a></div>
-                    <div class="link-right"><a href="#">iPad</a></div>
-                </div>
-                <div class="link-row">
-                    <div class="link-left"><a href="#">Mac</a></div>
-                    <div class="link-right"><a href="#">Apple TV</a></div>
-                </div>
-                <div class="link-row">
-                    <div class="link-left"><a href="#">iPod</a></div>
-                    <div class="link-right"><a href="#">Apple Watch</a></div>
-                </div>
-            </div>
+            <p><a href="#">iPhone</a></p>
+            <p><a href="#">Mac</a></p>
+            <p><a href="#">iPad</a></p>
         </div>
 
-        <div class="links-column">
+        <div class="right-section">
             <h2>Information</h2>
-            <div class="links-grid">
-                <div class="link-row">
-                    <div class="link-left"><a href="#">Learn How</a></div>
-                    <div class="link-right"><a href="#">Terms and condition</a></div>
-                </div>
-                <div class="link-row">
-                    <div class="link-left"><a href="#">Service Providers</a></div>
-                    <div class="link-right"><a href="#">Condition</a></div>
-                </div>
-            </div>
+            <p><a href="##">Learn How</a></p>
+            <p><a href="##">Service Providers</a></p>
+            <p><a href="##">Contact Us</a></p>
         </div>
 
-        <div class="links-column">
+        <div class="right-section">
             <h2>Support and Sales</h2>
-            <div class="contact-info">
-                <p><strong>For Maintenance:</strong></p>
-                <p><a href="#">Visit AC-Care</a></p>
-                
-                <p><strong>For Individual Sales:</strong></p>
-                <p><a href="#">Point of Sales</a></p>
-                
-                <p><strong>For corporate or channels sales:</strong></p>
-                <p><a href="mailto:sales@arabcomputers.com.sa">sales@arabcomputers.com.sa</a></p>
-            </div>
+            <p><a href="#">For Maintenance: Visit AC-Care</a></p>
+            <p><a href="#">For Individual Sales: Point of Sales</a></p>
         </div>
     </div>
 
