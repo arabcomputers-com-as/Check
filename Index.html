@@ -229,10 +229,10 @@
         }
 
         .link-right {
-            text-align: center;
+            text-align: left; /* تغيير إلى left لمحاذاة بداية الكلمات */
             flex: 1;
-            padding-right: 0; /* إزالة المسافة تماماً */
-            margin-left: -20px; /* سحب الكلمات أكثر نحو الوسط */
+            padding-left: 10px; /* إضافة مسافة من اليسار لمحاذاة الكلمات */
+            margin-left: -30px; /* سحب الكلمات أكثر نحو الوسط */
         }
 
         .links-section a {
@@ -326,7 +326,9 @@
             }
 
             .link-right {
-                margin-left: 0; /* إزالة السحب في الشاشات الصغيرة */
+                margin-left: 0;
+                text-align: center;
+                padding-left: 0;
             }
         }
 
