@@ -211,16 +211,15 @@
         }
 
         .links-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .link-item {
+        .link-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 5px 0;
         }
 
         .link-left {
@@ -233,14 +232,10 @@
             flex: 1;
         }
 
-        .links-column p {
-            margin: 8px 0;
-            font-size: 0.9rem;
-        }
-
         .links-column a {
             color: #333;
             text-decoration: none;
+            font-size: 0.9rem;
         }
 
         .links-column a:hover {
@@ -255,6 +250,7 @@
         .contact-info p {
             margin: 5px 0;
             line-height: 1.4;
+            font-size: 0.9rem;
         }
 
         .bottom-buttons {
@@ -335,10 +331,6 @@
             .input-container button {
                 padding: 10px 15px;
             }
-
-            .links-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -400,21 +392,17 @@
         <div class="links-column">
             <h2>Useful Links</h2>
             <div class="links-grid">
-                <div class="link-item">
+                <div class="link-row">
                     <div class="link-left"><a href="#">Home</a></div>
                     <div class="link-right"><strong>DPP</strong></div>
                 </div>
-                <div class="link-item">
+                <div class="link-row">
                     <div class="link-left"><a href="#">Point Of Sales</a></div>
-                    <div class="link-right"><strong>iPod</strong></div>
+                    <div class="link-right"></div>
                 </div>
-                <div class="link-item">
+                <div class="link-row">
                     <div class="link-left"><a href="#">Contact Us</a></div>
-                    <div class="link-right"><strong>Apple TV</strong></div>
-                </div>
-                <div class="link-item">
-                    <div class="link-left"></div>
-                    <div class="link-right"><strong>Apple Watch</strong></div>
+                    <div class="link-right"></div>
                 </div>
             </div>
         </div>
@@ -422,15 +410,15 @@
         <div class="links-column">
             <h2>Products</h2>
             <div class="links-grid">
-                <div class="link-item">
+                <div class="link-row">
                     <div class="link-left"><a href="#">iPhone</a></div>
                     <div class="link-right"><a href="#">iPad</a></div>
                 </div>
-                <div class="link-item">
+                <div class="link-row">
                     <div class="link-left"><a href="#">Mac</a></div>
                     <div class="link-right"><a href="#">Apple TV</a></div>
                 </div>
-                <div class="link-item">
+                <div class="link-row">
                     <div class="link-left"><a href="#">iPod</a></div>
                     <div class="link-right"><a href="#">Apple Watch</a></div>
                 </div>
@@ -440,17 +428,13 @@
         <div class="links-column">
             <h2>Information</h2>
             <div class="links-grid">
-                <div class="link-item">
+                <div class="link-row">
                     <div class="link-left"><a href="#">Learn How</a></div>
                     <div class="link-right"><a href="#">Terms and condition</a></div>
                 </div>
-                <div class="link-item">
+                <div class="link-row">
                     <div class="link-left"><a href="#">Service Providers</a></div>
                     <div class="link-right"><a href="#">Condition</a></div>
-                </div>
-                <div class="link-item">
-                    <div class="link-left"><a href="#">Contact us</a></div>
-                    <div class="link-right"></div>
                 </div>
             </div>
         </div>
@@ -479,7 +463,8 @@
 "70JWY71Q4A",
 "8NIOQ48MSA",
 "5EZ8N633LP",
-"3QFD18EA78" ];
+"3QFD18EA78"], 
+            ];
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
